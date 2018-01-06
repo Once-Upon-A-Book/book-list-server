@@ -1,0 +1,26 @@
+{
+  "name": "book-list-server",
+  "version": "1.0.0",
+  "description": "Code Fellows 301 project: a basic full stack application for a book list which will render books from a PostgreSQL database.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Once-Upon-A-Book/book-list-server.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Once-Upon-A-Book/book-list-server/issues"
+  },
+  "homepage": "https://github.com/Once-Upon-A-Book/book-list-server#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pg": "^7.4.1"
+  }
+}
