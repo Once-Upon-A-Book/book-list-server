@@ -7,7 +7,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const PORT = process.env.PORT || 3000;
 const app = express();
-const conString = 'postgres://alicialycan:534@localhost:5432/books_app';
+// const conString = 'postgres://alicialycan:534@localhost:5432/books_app';
+const conString = 'postgres://amgranad:amber123@localhost:5432/books_app';
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => {
