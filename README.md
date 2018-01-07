@@ -1,23 +1,19 @@
-# Book List - Server
-Code Fellows 301 project: a basic full stack application for a book list which will render books from a PostgreSQL database.
+# Book List - Client
 
-**Authors**:
-**Version**: 1.0.0 (increment the patch/fix version number up if you make more commits past your first submission)
+**Author**: Alicia Lycan, Amber Kim, Eric Cobb
+**Version**: 1.0.0
 
 ## Overview
-<!-- Provide a high level overview of what this application is and why you are building it, beyond the fact that it's an assignment for a Code Fellows 301 class. (i.e. What's your problem domain?) -->
+A basic full stack application for a book list which will render books from a PostgreSQL database.
 
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+To run this app, clone down both repos into the same folder and connect with your servers.
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+This app uses these technologies: PostgreSql, JavaScript, JQuery, Ajax, Node.js, Heroku, Express, NPM, HTML
 
 ## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
+01-006-2018 5:32pm - project mvp
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+Thanks to JB Tellez, James Billard, Madeline Stevens, Michael Treat for all your help!
