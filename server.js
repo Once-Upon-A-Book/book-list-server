@@ -11,6 +11,7 @@ const app = express();
 const conString = 'postgres://amgranad:amber123@localhost:5432/books_app';
 const client = new pg.Client(conString);
 client.connect();
+
 client.on('error', err => {
   console.error(err);
 });
@@ -26,6 +27,30 @@ app.get('/api/v1/books', (req, res) => {
     }).catch(err => {
       console.err(err);
     });
+});
+
+app.get('/api/v1/books/:id', (req, res) => {
+  client.query(`
+    SELECT * FROM books WHERE book_id=$1;
+  `, [req.params.id]
+  ).then(result => res.send(result.rows))
+   .catch(err => console.error(err));
+});
+
+app.post('/api/v1/books', (req, res) => {
+  client.query(`
+    INSERT INTO books (title, author, image_url, isbn, description)
+    VALUES($1, $2, $3, $4, $5);
+  `,
+    [
+      req.body.title,
+      req.body.author,
+      req.body.image_url,
+      req.body.isbn,
+      req.body.description
+    ]
+  ).then(() => res.send('inserted successfully'))
+  .catch(err => console.error(err));
 });
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
