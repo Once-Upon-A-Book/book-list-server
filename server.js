@@ -1,16 +1,16 @@
 'use strict';
 
 const pg = require('pg');
-const fs = require('fs');
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+
 const PORT = process.env.PORT || 3000;
 const app = express();
-// const conString = 'postgres://alicialycan:534@localhost:5432/books_app';
-const conString = 'postgres://amgranad:amber123@localhost:5432/books_app';
-const client = new pg.Client(conString);
+const DATABASE_URL = process.env.DATABAE_URL || 'postgres://alicialycan:534@localhost:5432/books_app';
+//const DATABASE_URL = process.env.DATABAE_URL || 'postgres://amgranad:amber123@localhost:5432/books_app';
+
+const client = new pg.Client(DATABASE_URL);
 client.connect();
 
 client.on('error', err => {
@@ -23,8 +23,8 @@ app.use(cors());
 
 app.get('/api/v1/books', (req, res) => {
   client.query(`SELECT book_id, title, author, image_url FROM books;`)
-    .then(data => {
-      res.send(data.rows);
+    .then(result => {
+      res.send(result.rows);
     }).catch(err => {
       console.err(err);
     });
@@ -37,7 +37,7 @@ app.get('/api/v1/books/:id', (req, res) => {
   ).then(result => {
     res.send(result.rows[0]);
   })
-   .catch(err => console.error(err));
+    .catch(err => console.error(err));
 });
 
 app.post('/api/v1/books', (req, res) => {
@@ -53,7 +53,7 @@ app.post('/api/v1/books', (req, res) => {
       req.body.description
     ]
   ).then(() => res.send('inserted successfully'))
-  .catch(err => console.error(err));
+    .catch(err => console.error(err));
 });
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
