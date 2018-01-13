@@ -13,7 +13,7 @@ To run this app, clone down both repos into the same folder and connect with you
 This app uses these technologies: PostgreSql, JavaScript, JQuery, Ajax, Node.js, Heroku, Express, NPM, and HTML.
 
 ## Change Log
-01-006-2018 5:32pm - project mvp (lab11)
+01-06-2018 5:32pm - project mvp (lab11)
 
 01-11-2018 9:30pm - project mvp (lab 12)
 
