@@ -7,8 +7,8 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-const DATABASE_URL = process.env.DATABAE_URL || 'postgres://alicialycan:534@localhost:5432/books_app';
-//const DATABASE_URL = process.env.DATABAE_URL || 'postgres://amgranad:amber123@localhost:5432/books_app';
+// const DATABASE_URL = process.env.DATABASE_URL || 'postgres://alicialycan:534@localhost:5432/books_app';
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://amgranad:amber123@localhost:5432/books_app';
 
 const client = new pg.Client(DATABASE_URL);
 client.connect();
