@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const DATABASE_URL = process.env.DATABASE_URL || 'postgres://alicialycan:534@localhost:5432/books_app';
 //const DATABASE_URL = process.env.DATABASE_URL || 'postgres://amgranad:amber123@localhost:5432/books_app';
+//const TOKEN = process.env.TOKEN || 54321;
 
 const client = new pg.Client(DATABASE_URL);
 client.connect();
@@ -73,5 +74,7 @@ app.put('/api/v1/books/:id', (req, res) => {
   ).then(result => res.status(204).send(result))
     .catch(err => console.error(err));
 });
+
+//app.get('/api/v1/admin', (req, res) => res.send(TOKEN === parseInt(req.query.token)));
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}!`));
