@@ -70,10 +70,7 @@ app.put('/api/v1/books/:id', (req, res) => {
   SET title='${req.body.title}', author='${req.body.author}', image_url='${req.body.image_url}', isbn='${req.body.isbn}', description='${req.body.description}' 
   WHERE book_id=${req.body.book_id};
   `
-  ).then( () => {
-    console.log('inside the then');
-    res.send('updated successfully');
-  })
+  ).then(result => res.status(204).send(result))
     .catch(err => console.error(err));
 });
 
