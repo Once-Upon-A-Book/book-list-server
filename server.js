@@ -7,9 +7,9 @@ const cors = require('cors');
 
 const PORT = process.env.PORT || 3000;
 const app = express();
-const DATABASE_URL = process.env.DATABASE_URL || 'postgres://alicialycan:534@localhost:5432/books_app';
-//const DATABASE_URL = process.env.DATABASE_URL || 'postgres://amgranad:amber123@localhost:5432/books_app';
-//const TOKEN = process.env.TOKEN || 54321;
+// const DATABASE_URL = process.env.DATABASE_URL || 'postgres://alicialycan:534@localhost:5432/books_app';
+const DATABASE_URL = process.env.DATABASE_URL || 'postgres://amgranad:amber123@localhost:5432/books_app';
+const TOKEN = process.env.TOKEN || 54321;
 
 const client = new pg.Client(DATABASE_URL);
 client.connect();
